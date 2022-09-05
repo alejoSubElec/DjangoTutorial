@@ -1,5 +1,5 @@
 from django.db import models
-from tkinter import CASCADE
+
 
 
 class Question(models.Model):
