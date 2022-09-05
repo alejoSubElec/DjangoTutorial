@@ -1,6 +1,6 @@
-from secrets import choice
-from tkinter import CASCADE
 from django.db import models
+from tkinter import CASCADE
+
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
