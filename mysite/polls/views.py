@@ -1,7 +1,7 @@
 from re import template
 from urllib import response
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from .models import Question, Choice
 from django.template import loader
 from django.urls import reverse
@@ -15,7 +15,7 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Question.objects.order_by("-pub_date")[:5]
     
-class Detail(generic.DetailView):
+class DetailView(generic.DetailView):
     model = Question
     template_name = "polls/detail.html"
 # def index(request):
