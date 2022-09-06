@@ -1,21 +1,20 @@
 from re import template
-from tkinter import E
 from urllib import response
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Question
+from .models import Question, Choice
 from django.template import loader
 from django.urls import reverse
 
 
 
-# def index(request):
-#     latest_question_list = Question.objects.order_by("-pub_date")[:5]
-#     template = loader.get_template("polls/index.html")
-#     context = {
-#         "latest_question_list": latest_question_list,
-#     }
-#     return render(request, "polls/index.html", context)
+def index(request):
+     latest_question_list = Question.objects.order_by("-pub_date")[:5]
+     template = loader.get_template("polls/index.html")
+     context = {
+         "latest_question_list": latest_question_list,
+     }
+     return render(request, "polls/index.html", context)
 
 def detail(request, question_id):
     question = get_object_or_404(Question, pk = question_id)
