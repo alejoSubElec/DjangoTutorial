@@ -1,7 +1,7 @@
 import datetime
 
 from django.test import TestCase
-from djago.utils import timezone
+from django.utils import timezone
 
 from .models import Question
 
