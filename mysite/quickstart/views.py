@@ -1,13 +1,12 @@
-import imp
 from django.shortcuts import render
-from django.contrib.auth.models import Question, Choice
+from polls.models import Question, Choice
 from rest_framework import viewsets
 from rest_framework import permissions
-from apidjrst.quickstart.serializers import QuestionSerializer, QuestionSerializer2, ChoiceSerializer, ChoiceSerializer2
+from quickstart.serializers import QuestionSerializer, QuestionSerializer2, ChoiceSerializer, ChoiceSerializer2
 
 class QuestionViewSet(viewsets.ModelViewSet):
     "API endpoint"
-    queryset = Question.objects.all().order_by("-date_joined")
+    queryset = Question.objects.all().order_by("-pub_date")
     serializer_class = QuestionSerializer
     permission_classes = [permissions.IsAuthenticated]
 

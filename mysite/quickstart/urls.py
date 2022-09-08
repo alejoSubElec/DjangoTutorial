@@ -1,6 +1,6 @@
 from django.urls import include, path
 from rest_framework import routers
-from mysite.quickstart import views
+from quickstart import views
 
 router = routers.DefaultRouter()
 router.register(r"questions", views.QuestionViewSet)

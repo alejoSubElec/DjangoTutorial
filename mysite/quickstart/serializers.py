@@ -1,5 +1,4 @@
-from dataclasses import fields
-from django.contrib.auth.models import Question, Choice
+from polls.models import Question, Choice
 from rest_framework import serializers
 
 class QuestionSerializer(serializers.HyperlinkedModelSerializer):
